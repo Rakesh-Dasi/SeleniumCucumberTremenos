@@ -17,22 +17,22 @@ public class PersonalInformationPage{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(how=How.XPATH, using ="//input[@placeholder='Address Line 1']")
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__QUE_896EB0F05C8002E2389749']")
 	private WebElement addressLineOne;
 	
-	@FindBy(how=How.XPATH, using ="//input[@placeholder='City']")
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__QUE_896EB0F05C8002E2389751']")
 	private WebElement cityName;
 	
-	@FindBy(how=How.XPATH, using ="//input[@placeholder='State']")
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__QUE_896EB0F05C8002E2389752']")
 	private  WebElement stateName;
 	
 	@FindBy(how=How.ID, using ="C2__QUE_896EB0F05C8002E2389753")
 	private  WebElement zipcodeNumber;
 		
-	@FindBy(how=How.XPATH, using ="//*[@id='C2__QUE_896EB0F05C8002E2389754']")
+	@FindBy(how=How.ID, using ="C2__QUE_896EB0F05C8002E2389754")
 	private WebElement number;
 	
-	@FindBy(how=How.XPATH, using ="//*[@id='C2__QUE_896EB0F05C8002E2389755']")
+	@FindBy(how=How.ID, using ="C2__QUE_896EB0F05C8002E2389755")
 	private  WebElement expirationDate;
 	
 	@FindBy(how=How.ID, using ="C2__QUE_896EB0F05C8002E2389748")
@@ -44,8 +44,13 @@ public class PersonalInformationPage{
 	@FindBy(how=How.ID, using ="C2__QUE_3949A160F77908F470900")
 	private  WebElement idTypeDropdown;
 	
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__QUE_7C7A7A0E81F5F31F87434']")
+	private  WebElement issuingState;
+	
+	@FindBy(how=How.XPATH, using = "//span[starts-with(text(), 'Please enter a valid')]")
+	private WebElement errorMessage;
 
-	public void fill_AdditionalDetails(String address, String city, String state, String zipcode, String value, String expirationdate, String dob, String dropDownValue)
+	public void fill_AdditionalDetails(String address, String city, String state, String zipcode, String value, String expirationdate, String dob, String issuingstate, String dropDownValue)
 	{
 		Wait.untilPageLoadComplete(driver);
 		addressLineOne.sendKeys(address);
@@ -55,6 +60,7 @@ public class PersonalInformationPage{
 		number.sendKeys(value);
 		expirationDate.sendKeys(expirationdate);
 		DOB.sendKeys(dob);
+		issuingState.sendKeys(issuingstate);
 		Utils.selectByValue(idTypeDropdown, dropDownValue);
 	}
 	

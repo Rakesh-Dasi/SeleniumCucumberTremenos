@@ -16,10 +16,10 @@ public class DriverLicensePage{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(how=How.ID, using ="C2__HEAD_381DC9A28E330321228127")
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__p1_HEAD_381DC9A28E330321228127']/div")
 	private WebElement readyDriverLicenseMessage;
 	
-	@FindBy(how=How.XPATH, using ="//span[starts-with(text(), 'Enter my information')]")
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__BUT_A130C91E903DC6FE559225']/span")
 	private WebElement editMyInfoLink;
 	
 	public String getDriverLicenseMessage(){

@@ -40,7 +40,8 @@ public class Wait {
 		 }
 		 
 		 
-		 private static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds){
+		 @SuppressWarnings("deprecation")
+		private static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds){
 		 WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
 		 webDriverWait.withTimeout(timeoutInSeconds, TimeUnit.SECONDS);
 		 try{

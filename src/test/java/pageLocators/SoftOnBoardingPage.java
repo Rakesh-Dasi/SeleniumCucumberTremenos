@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-
 import dataProviders.ConfigFileReader;
 import managers.WebDriverManager;
 import selenium.Wait;
@@ -35,7 +34,7 @@ public class SoftOnBoardingPage{
 	@FindBy(how=How.XPATH, using ="//*[@id='C2__FS_QUE_0338FABA792CE55D132113']/div/label")
 	public  WebElement checkBox;
 	
-	@FindBy(how=How.XPATH, using ="//*[text()='Next']")
+	@FindBy(how=How.XPATH, using ="//*[@id='C2__BUT_896EB0F05C8002E2518460']")
 	public  WebElement nextButton;
 
 	public void naviageToSoftOnboardingPage(){
@@ -53,6 +52,8 @@ public class SoftOnBoardingPage{
 	}
 	
 	public void fill_PersonalDetails(String firstName, String lastname, String email, String phoneNumber){
+		Wait.untilPageLoadComplete(driver);
+		Wait.untilJqueryIsDone(driver);
 		FirstName.sendKeys(firstName);
 		LastName.sendKeys(lastname);
 		EmailId.sendKeys(email);

@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import pageLocators.AddSavingAccountPage;
 import pageLocators.DriverLicensePage;
+import pageLocators.KBAPage;
 import pageLocators.PersonalInformationPage;
-import pageLocators.SocialSecurityPageLocators;
+import pageLocators.SocialSecurityPage;
 import pageLocators.SoftOnBoardingPage;
 
 public class PageObjectManager {
@@ -15,8 +16,9 @@ public class PageObjectManager {
 	private SoftOnBoardingPage softOnBoardingPage;
 	private AddSavingAccountPage addSavingAccountPage;
 	private PersonalInformationPage personalInformationPageLocators;
-	private SocialSecurityPageLocators socialSecurityPageLocators;
+	private SocialSecurityPage socialSecurityPageLocators;
 	private DriverLicensePage driverLicensePage;
+	private KBAPage kbaPage;
 	
 	//To create an object of the pages
 	public PageObjectManager(WebDriver driver){
@@ -36,12 +38,15 @@ public class PageObjectManager {
 		return (personalInformationPageLocators ==null ) ? personalInformationPageLocators = new PersonalInformationPage(driver) : personalInformationPageLocators;
 	}
 	
-	public SocialSecurityPageLocators getSocialSecurityPageLocators(){
-		return (socialSecurityPageLocators ==null ) ? socialSecurityPageLocators = new SocialSecurityPageLocators(driver) : socialSecurityPageLocators;
+	public SocialSecurityPage getSocialSecurityPage(){
+		return (socialSecurityPageLocators ==null ) ? socialSecurityPageLocators = new SocialSecurityPage(driver) : socialSecurityPageLocators;
 	}
 	
 	public DriverLicensePage getDriverLicensePage(){
 		return (driverLicensePage ==null ) ? driverLicensePage = new DriverLicensePage(driver) : driverLicensePage;
 	}
 
+	public KBAPage getKbaPage(){
+		return (kbaPage ==null ) ? kbaPage = new KBAPage(driver) : kbaPage;
+	}
 }
